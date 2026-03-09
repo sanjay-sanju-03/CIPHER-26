@@ -9,7 +9,7 @@ Organized by the Association of Information Technology
 
 ## About
 
-CIPHER is the annual flagship Techno-Cultural Fest of the IT Association at LBS College of Engineering, Kasaragod. This is the official website for CIPHER'26 — featuring event listings, schedule, sponsors, and an admin panel to manage everything.
+CIPHER is the annual flagship Techno-Cultural Fest of the IT Association at LBS College of Engineering, Kasaragod. This is the official website for CIPHER'26 — featuring event listings, and schedule to manage everything.
 
 ---
 
@@ -18,9 +18,6 @@ CIPHER is the annual flagship Techno-Cultural Fest of the IT Association at LBS 
 - **Home** — Landing page with fest info and highlights
 - **Events** — All events with posters, details, and registration links
 - **Schedule** — Day schedule (March 23, 2026)
-- **Sponsors** — Our sponsors
-- **Admin Panel** — Manage events, schedule, and sponsors (password protected)
-
 ---
 
 ## Features
@@ -28,7 +25,6 @@ CIPHER is the annual flagship Techno-Cultural Fest of the IT Association at LBS 
 - View all events with full details and posters
 - Register via Google Form links
 - Registration auto-closes after set deadline
-- Secure admin dashboard (JWT protected)
 - Google Maps embed in footer
 - Fully responsive design
 
