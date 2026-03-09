@@ -34,18 +34,4 @@ CIPHER is the annual flagship Techno-Cultural Fest of the IT Association at LBS 
 
 ---
 
-## Contact
-
-| Role | Name | Phone |
-|------|------|-------|
-| Student Coordinator | Muhammed Uvais K | +91 6282691543 |
-| HOD | Dr. Anver S.R | +91 9447341312 |
-| Staff Coordinator | Prof. Krishnaprasad P.K | +91 9495447684 |
-
-📍 LBS College of Engineering, Kasaragod, Kerala — 671542  
-📷 [Instagram](https://www.instagram.com/cipher.lbscek/)  
-💼 [LinkedIn](https://www.linkedin.com/company/cipherlbscek/)
-
----
-
 © 2026 CIPHER'26 — LBS College of Engineering, Kasaragod
