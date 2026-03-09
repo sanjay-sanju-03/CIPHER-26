@@ -1,0 +1,244 @@
+.schedule-page {
+    padding: 120px 0 80px;
+}
+
+/* ── Timeline ── */
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 32px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary), transparent);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 32px;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -27px;
+    top: 20px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid;
+    background: var(--bg-dark);
+    z-index: 1;
+}
+
+.timeline-green .timeline-dot {
+    border-color: var(--primary);
+    box-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
+}
+
+.timeline-purple .timeline-dot {
+    border-color: var(--secondary);
+    box-shadow: 0 0 8px rgba(123, 47, 255, 0.6);
+}
+
+.timeline-cyan .timeline-dot {
+    border-color: var(--accent);
+    box-shadow: 0 0 8px rgba(0, 212, 255, 0.6);
+}
+
+.timeline-muted .timeline-dot {
+    border-color: var(--text-muted);
+}
+
+.timeline-content {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+.timeline-time {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--primary);
+    font-family: 'Orbitron', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    padding-top: 14px;
+    white-space: nowrap;
+}
+
+.timeline-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    transition: all 0.3s ease;
+}
+
+.timeline-green .timeline-card:hover {
+    border-color: var(--primary);
+    box-shadow: var(--glow-green);
+}
+
+.timeline-purple .timeline-card:hover {
+    border-color: var(--secondary);
+    box-shadow: var(--glow-purple);
+}
+
+.timeline-cyan .timeline-card:hover,
+.timeline-muted .timeline-card:hover {
+    border-color: var(--accent);
+    box-shadow: var(--glow-cyan);
+}
+
+.timeline-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.timeline-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+.timeline-desc {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.timeline-venue {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+/* ── Coming Soon ── */
+.cs-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--bg-card);
+    padding: 80px 40px;
+    margin-top: 8px;
+}
+
+.cs-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    max-width: 520px;
+}
+
+.cs-icon-wrap {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 255, 136, 0.25);
+    background: rgba(0, 255, 136, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cs-icon {
+    color: var(--primary);
+    animation: float 3s ease-in-out infinite;
+}
+
+.cs-heading {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.cs-sub {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin: 0;
+}
+
+.cs-countdown {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.cs-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 68px;
+    background: rgba(0, 255, 136, 0.04);
+    border: 1px solid rgba(0, 255, 136, 0.12);
+    border-radius: 10px;
+    padding: 14px 10px;
+}
+
+.cs-num {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--primary);
+    line-height: 1;
+    min-width: 2ch;
+    text-align: center;
+}
+
+.cs-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.cs-until {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+    .timeline-content {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-time {
+        padding-top: 0;
+    }
+
+    .cs-wrapper {
+        padding: 48px 20px;
+    }
+}

@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Environment — NEVER commit your real secrets
+.env
+.env.local
+.env.production
+
+# Logs
+*.log
+npm-debug.log*
+
+# Uploads (stored in DB as base64 — not on disk)
+uploads/
