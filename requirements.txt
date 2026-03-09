@@ -1,0 +1,51 @@
+# ─────────────────────────────────────────────────────────────
+# CIPHER'26 — Requirements
+# ─────────────────────────────────────────────────────────────
+# This is a Node.js (MERN stack) project.
+# Dependencies are managed via npm and listed in package.json.
+# Run `npm install` in both /client and /server to install them.
+# ─────────────────────────────────────────────────────────────
+
+
+# ── System Requirements ───────────────────────────────────────
+Node.js    >= 18.0.0
+npm        >= 9.0.0
+MongoDB    Atlas account (free tier is sufficient)
+
+
+# ── Backend Dependencies (server/) ───────────────────────────
+express        ^5.2.1      # Web framework
+mongoose       ^9.2.4      # MongoDB ODM
+bcryptjs       ^3.0.3      # Password hashing
+jsonwebtoken   ^9.0.3      # JWT authentication
+cors           ^2.8.6      # Cross-origin requests
+dotenv         ^17.3.1     # Environment variables
+multer         ^2.1.1      # File upload handling
+nodemon        ^3.1.14     # Dev auto-restart (dev only)
+
+
+# ── Frontend Dependencies (client/) ──────────────────────────
+react              ^19.2.0    # UI library
+react-dom          ^19.2.0    # DOM rendering
+react-router-dom   ^7.13.1    # Client-side routing
+axios              ^1.13.6    # HTTP client
+react-icons        ^5.6.0     # Icon library
+react-countup      ^6.5.3     # Animated number counter
+react-scroll       ^1.9.3     # Smooth scroll
+vite               ^7.3.1     # Build tool (dev only)
+
+
+# ── External Services ─────────────────────────────────────────
+MongoDB Atlas    # Cloud database  — https://www.mongodb.com/atlas
+Google Fonts     # Orbitron, Rajdhani, Inter
+Google Maps      # Embed API (no key needed for embed)
+
+
+# ── Setup ─────────────────────────────────────────────────────
+# 1. Clone the repo
+# 2. Copy server/.env.example -> server/.env  (fill in your values)
+# 3. Copy client/.env.example -> client/.env  (fill in your values)
+# 4. cd server && npm install
+# 5. cd client && npm install
+# 6. cd server && npm run dev
+# 7. cd client && npm run dev
