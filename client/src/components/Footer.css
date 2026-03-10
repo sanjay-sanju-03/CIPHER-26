@@ -174,12 +174,38 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .contact-section {
+        padding: 48px 0 40px;
+    }
+
+    .contact-title {
+        font-size: 1.4rem;
+        letter-spacing: 3px;
+        margin-bottom: 32px;
+    }
+
     .contact-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 32px;
     }
 
     .contact-map {
-        height: 220px;
+        height: 200px;
+    }
+
+    .logo-cipher {
+        font-size: 1.4rem;
+    }
+
+    .logo-year {
+        font-size: 1rem;
+    }
+
+    .contact-sub {
+        font-size: 0.82rem;
+    }
+
+    .contact-phone-row {
+        font-size: 0.8rem;
     }
 }

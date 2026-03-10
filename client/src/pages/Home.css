@@ -451,7 +451,7 @@
     letter-spacing: 1px;
 }
 
-/* Responsive */
+/* ── Responsive ── */
 @media (max-width: 900px) {
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -466,13 +466,141 @@
     }
 }
 
-@media (max-width: 600px) {
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
+@media (max-width: 768px) {
+    .hero {
+        padding: 100px 0 48px;
+        min-height: auto;
+    }
+
+    .hero-glitch-text {
+        font-size: clamp(2.8rem, 14vw, 5rem);
+        letter-spacing: 2px;
+    }
+
+    .hero-year {
+        font-size: clamp(1.4rem, 5vw, 2.5rem);
+    }
+
+    .hero-tagline {
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-meta {
+        font-size: 0.82rem;
     }
 
     .hero-actions {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .stats-section {
+        padding: 48px 0;
+    }
+
+    .stats-grid {
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 20px 12px;
+    }
+
+    .stat-value {
+        font-size: 1.6rem;
+    }
+
+    .about-section {
+        padding: 48px 0;
+    }
+
+    .about-block {
+        padding: 20px 18px;
+    }
+
+    .about-hex-row {
+        gap: 10px;
+        margin-top: 24px;
+    }
+
+    .hex-item {
+        width: 60px;
+        height: 60px;
+        font-size: 0.55rem;
+    }
+
+    .highlights-section {
+        padding: 48px 0;
+    }
+
+    .highlight-card {
+        padding: 28px 20px;
+    }
+
+    .cta-section {
+        padding: 40px 0 60px;
+    }
+
+    .cta-card {
+        padding: 48px 20px;
+        border-radius: 14px;
+    }
+
+    .cta-card h2 {
+        font-size: 1.4rem;
+    }
+
+    .cta-card p {
+        font-size: 0.92rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.88rem;
+        margin-bottom: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 90px 0 36px;
+    }
+
+    .hero-glitch-text {
+        font-size: clamp(2.2rem, 16vw, 3.5rem);
+    }
+
+    .hero-year {
+        font-size: clamp(1rem, 5vw, 1.8rem);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .stat-value {
+        font-size: 1.3rem;
+    }
+
+    .stat-label {
+        font-size: 0.6rem;
+    }
+
+    .hex-item {
+        width: 50px;
+        height: 50px;
+        font-size: 0.5rem;
+    }
+
+    .cta-card {
+        padding: 36px 16px;
     }
 }
