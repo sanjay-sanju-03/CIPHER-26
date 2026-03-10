@@ -7,8 +7,8 @@ import './AdminDashboard.css';
 const API_BASE = import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:5000';
 const TABS = ['Overview', 'Events', 'Registrations', 'Schedule', 'Sponsors'];
 
-// One-day fest — only March 23
-const MARCH_DATES = ['March 23'];
+// March 1 – 23 (pre-events can be on earlier dates)
+const MARCH_DATES = Array.from({ length: 23 }, (_, i) => `March ${i + 1}`);
 
 export default function AdminDashboard() {
     const [tab, setTab] = useState('Overview');
