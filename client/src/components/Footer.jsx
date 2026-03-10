@@ -2,8 +2,8 @@ import { FiPhone, FiMapPin, FiInstagram, FiLinkedin } from 'react-icons/fi';
 import './Footer.css';
 
 const CONTACTS = [
-    { phone: '+91 6282691543', name: 'Muhammed Uvais K', role: 'Student Coordinator' },
-    { phone: '+91 9447341312', name: 'Dr. Anver S.R', role: 'HOD' },
+    { phone: '+91 8075340456', name: 'Miza M', role: 'Student Coordinator' },
+    { phone: '+91 8547458075', name: 'Dr. Manoj Kumar G', role: 'HOD' },
     { phone: '+91 9495447684', name: 'Prof. Krishnaprasad P.K', role: 'Staff Coordinator' },
 ];
 
