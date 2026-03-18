@@ -17,7 +17,7 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(to bottom, var(--primary), transparent);
+    background: linear-gradient(to bottom, var(--primary-light), transparent);
 }
 
 .timeline-item {
@@ -39,17 +39,17 @@
 }
 
 .timeline-green .timeline-dot {
-    border-color: var(--primary);
+    border-color: var(--accent-cta);
     box-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
 }
 
 .timeline-purple .timeline-dot {
-    border-color: var(--secondary);
-    box-shadow: 0 0 8px rgba(123, 47, 255, 0.6);
+    border-color: var(--primary);
+    box-shadow: 0 0 8px rgba(74, 127, 165, 0.6);
 }
 
 .timeline-cyan .timeline-dot {
-    border-color: var(--accent);
+    border-color: var(--primary-light);
     box-shadow: 0 0 8px rgba(0, 212, 255, 0.6);
 }
 
@@ -68,7 +68,7 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    color: var(--primary);
+    color: var(--primary-light);
     font-family: 'Orbitron', monospace;
     font-size: 0.7rem;
     letter-spacing: 1px;
@@ -85,19 +85,19 @@
 }
 
 .timeline-green .timeline-card:hover {
-    border-color: var(--primary);
-    box-shadow: var(--glow-green);
+    border-color: var(--accent-cta);
+    box-shadow: var(--glow-cta);
 }
 
 .timeline-purple .timeline-card:hover {
-    border-color: var(--secondary);
-    box-shadow: var(--glow-purple);
+    border-color: var(--primary);
+    box-shadow: var(--glow-primary);
 }
 
 .timeline-cyan .timeline-card:hover,
 .timeline-muted .timeline-card:hover {
-    border-color: var(--accent);
-    box-shadow: var(--glow-cyan);
+    border-color: var(--primary-light);
+    box-shadow: var(--glow-primary-light);
 }
 
 .timeline-header {
@@ -154,15 +154,15 @@
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    border: 1px solid rgba(0, 255, 136, 0.25);
-    background: rgba(0, 255, 136, 0.06);
+    border: 1px solid rgba(0, 212, 255, 0.25);
+    background: rgba(0, 212, 255, 0.06);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .cs-icon {
-    color: var(--primary);
+    color: var(--primary-light);
     animation: float 3s ease-in-out infinite;
 }
 
@@ -196,8 +196,8 @@
     align-items: center;
     gap: 4px;
     min-width: 68px;
-    background: rgba(0, 255, 136, 0.04);
-    border: 1px solid rgba(0, 255, 136, 0.12);
+    background: rgba(0, 212, 255, 0.04);
+    border: 1px solid rgba(74, 127, 165, 0.15);
     border-radius: 10px;
     padding: 14px 10px;
 }
@@ -206,7 +206,7 @@
     font-family: 'Orbitron', monospace;
     font-size: 1.8rem;
     font-weight: 900;
-    color: var(--primary);
+    color: var(--primary-light);
     line-height: 1;
     min-width: 2ch;
     text-align: center;
@@ -229,16 +229,226 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .schedule-section {
+        padding: 48px 0;
+    }
+
+    .timeline-item {
+        padding: 0 0 20px 0;
+    }
+
     .timeline-content {
         grid-template-columns: 1fr;
+        gap: 12px;
     }
 
     .timeline-time {
         padding-top: 0;
+        padding-bottom: 8px;
+        font-size: 0.95rem;
+    }
+
+    .timeline-event {
+        padding: 16px 14px;
+        border-radius: 6px;
+    }
+
+    .event-name {
+        font-size: 1rem;
+    }
+
+    .event-location {
+        font-size: 0.8rem;
     }
 
     .cs-wrapper {
-        padding: 48px 20px;
+        padding: 44px 20px;
+    }
+
+    .cs-title {
+        font-size: 1.4rem;
+        margin-bottom: 24px;
+    }
+
+    .cs-unit-grid {
+        gap: 10px;
+    }
+
+    .cs-unit {
+        width: 60px;
+        height: 60px;
+        border-radius: 6px;
+    }
+
+    .cs-unit-num {
+        font-size: 1.4rem;
+    }
+
+    .cs-unit-label {
+        font-size: 0.6rem;
+    }
+
+    .cs-until {
+        font-size: 0.78rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .schedule-section {
+        padding: 40px 0;
+    }
+
+    .timeline-item {
+        padding: 0 0 16px 0;
+    }
+
+    .timeline-time {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+
+    .timeline-event {
+        padding: 14px 12px;
+        font-size: 0.9rem;
+        border-radius: 6px;
+    }
+
+    .event-name {
+        font-size: 0.95rem;
+    }
+
+    .event-location {
+        font-size: 0.75rem;
+    }
+
+    .cs-wrapper {
+        padding: 36px 16px;
+    }
+
+    .cs-title {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+
+    .cs-unit-grid {
+        gap: 8px;
+    }
+
+    .cs-unit {
+        width: 56px;
+        height: 56px;
+    }
+
+    .cs-unit-num {
+        font-size: 1.3rem;
+    }
+
+    .cs-unit-label {
+        font-size: 0.58rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .schedule-section {
+        padding: 32px 0;
+    }
+
+    .timeline-item {
+        padding: 0 0 14px 0;
+    }
+
+    .timeline-time {
+        font-size: 0.85rem;
+        padding-bottom: 6px;
+    }
+
+    .timeline-content {
+        gap: 10px;
+    }
+
+    .timeline-event {
+        padding: 12px 10px;
+        font-size: 0.85rem;
+        border-radius: 4px;
+    }
+
+    .event-name {
+        font-size: 0.9rem;
+    }
+
+    .event-location {
+        font-size: 0.7rem;
+    }
+
+    .cs-wrapper {
+        padding: 28px 12px;
+    }
+
+    .cs-title {
+        font-size: 1.2rem;
+        margin-bottom: 16px;
+    }
+
+    .cs-icon-wrap {
+        margin-bottom: 14px;
+    }
+
+    .cs-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .cs-unit-grid {
+        gap: 6px;
+    }
+
+    .cs-unit {
+        width: 48px;
+        height: 48px;
+        border-radius: 4px;
+    }
+
+    .cs-unit-num {
+        font-size: 1.1rem;
+    }
+
+    .cs-unit-label {
+        font-size: 0.55rem;
+    }
+
+    .cs-until {
+        font-size: 0.68rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .cs-wrapper {
+        padding: 24px 10px;
+    }
+
+    .cs-title {
+        font-size: 1.1rem;
+    }
+
+    .timeline-time {
+        font-size: 0.8rem;
+    }
+
+    .timeline-event {
+        font-size: 0.8rem;
+    }
+
+    .cs-unit {
+        width: 44px;
+        height: 44px;
+    }
+
+    .cs-unit-num {
+        font-size: 1rem;
+    }
+
+    .cs-unit-label {
+        font-size: 0.5rem;
     }
 }

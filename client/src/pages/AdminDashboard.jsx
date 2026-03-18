@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiPlus, FiEdit2, FiTrash2, FiUsers, FiCalendar, FiStar, FiLogOut, FiX, FiCheck, FiUpload, FiImage, FiWifi, FiMapPin } from 'react-icons/fi';
+import logo from '../assets/cipher-logo.png';
 import API from '../utils/api';
 import './AdminDashboard.css';
 
@@ -54,7 +55,7 @@ export default function AdminDashboard() {
         <div className="admin-page">
             <div className="admin-sidebar">
                 <div className="admin-logo">
-                    <span>CIPHER</span><span className="logo-year">'26</span>
+                    <img src={logo} alt="CIPHER'26 Logo" className="admin-logo-img" />
                 </div>
                 <nav className="admin-nav">
                     {TABS.map(t => (

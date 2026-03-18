@@ -27,7 +27,7 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
 }
 
 .login-header {
@@ -40,13 +40,13 @@
     height: 72px;
     border-radius: 50%;
     background: rgba(0, 255, 136, 0.1);
-    border: 1px solid var(--primary);
+    border: 1px solid var(--accent-cta);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary);
+    color: var(--accent-cta);
     margin: 0 auto 20px;
-    box-shadow: var(--glow-green);
+    box-shadow: var(--glow-cta);
     animation: pulse-glow 3s ease-in-out infinite;
 }
 
@@ -96,7 +96,7 @@
 }
 
 .pass-toggle:hover {
-    color: var(--primary);
+    color: var(--primary-light);
 }
 
 .login-btn {

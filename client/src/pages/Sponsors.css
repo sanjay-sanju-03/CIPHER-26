@@ -74,8 +74,8 @@
 }
 
 .sponsor-card:hover {
-    border-color: var(--sponsor-color, var(--primary));
-    box-shadow: var(--sponsor-glow, var(--glow-green));
+    border-color: var(--sponsor-color, var(--primary-light));
+    box-shadow: var(--sponsor-glow, var(--glow-primary-light));
     transform: translateY(-4px);
 }
 
@@ -128,7 +128,7 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
 }
 
 .sponsor-cta h2 {

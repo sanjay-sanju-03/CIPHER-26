@@ -46,6 +46,7 @@ app.use('/api/events', require('./routes/events'));
 app.use('/api/registrations', require('./routes/registrations'));
 app.use('/api/sponsors', require('./routes/sponsors'));
 app.use('/api/schedule', require('./routes/schedule'));
+app.use('/api/certificates', require('./routes/certificates'));
 
 // Local development
 if (process.env.NODE_ENV !== 'production') {

@@ -1,6 +1,6 @@
 .countdown-wrapper {
     text-align: center;
-    margin: 48px 0;
+    margin: 12px 0;
 }
 
 .countdown-label {
@@ -8,7 +8,7 @@
     font-size: 0.85rem;
     letter-spacing: 4px;
     color: var(--text-secondary);
-    margin-bottom: 24px;
+    margin-bottom: 12px;
     text-transform: uppercase;
 }
 
@@ -27,8 +27,8 @@
 }
 
 .countdown-box {
-    width: 90px;
-    height: 90px;
+    width: 75px;
+    height: 75px;
     background: var(--bg-card);
     border: 1px solid var(--border-bright);
     border-radius: 10px;
@@ -37,16 +37,27 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
-    box-shadow: var(--glow-green);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), inset 0 0 20px rgba(0, 212, 255, 0.05);
+    animation: countdownGlow 2s ease-in-out infinite;
+}
+
+@keyframes countdownGlow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), inset 0 0 20px rgba(0, 212, 255, 0.05);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(0, 212, 255, 0.5), inset 0 0 30px rgba(0, 212, 255, 0.1);
+    }
 }
 
 .countdown-value {
     font-family: 'Orbitron', monospace;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--primary-light);
     z-index: 1;
     position: relative;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
 }
 
 .countdown-shine {
@@ -55,7 +66,7 @@
     left: -100%;
     width: 60%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.06), transparent);
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.06), transparent);
     animation: shimmer 3s infinite;
 }
 
@@ -77,17 +88,80 @@
     color: var(--text-muted);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .countdown-box {
         width: 70px;
         height: 70px;
     }
 
     .countdown-value {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
+    }
+
+    .countdown-label {
+        font-size: 0.68rem;
     }
 
     .countdown-grid {
         gap: 12px;
+    }
+}
+
+@media (max-width: 640px) {
+    .countdown-box {
+        width: 65px;
+        height: 65px;
+    }
+
+    .countdown-value {
+        font-size: 1.4rem;
+    }
+
+    .countdown-label {
+        font-size: 0.65rem;
+    }
+
+    .countdown-grid {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown-box {
+        width: 55px;
+        height: 55px;
+        border-radius: 6px;
+    }
+
+    .countdown-value {
+        font-size: 1.2rem;
+    }
+
+    .countdown-label {
+        font-size: 0.6rem;
+        letter-spacing: 0.5px;
+    }
+
+    .countdown-grid {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 380px) {
+    .countdown-box {
+        width: 48px;
+        height: 48px;
+    }
+
+    .countdown-value {
+        font-size: 1rem;
+    }
+
+    .countdown-label {
+        font-size: 0.55rem;
+    }
+
+    .countdown-grid {
+        gap: 6px;
     }
 }

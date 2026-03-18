@@ -1,0 +1,105 @@
+.certs-page {
+    padding: 120px 0 80px;
+}
+
+.certs-intro {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin: 12px auto 48px;
+    max-width: 420px;
+}
+
+/* ── Two Option Cards ── */
+.certs-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cert-option-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 48px 32px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.35s ease;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.cert-option-card:hover {
+    transform: translateY(-6px);
+}
+
+.option-download:hover {
+    border-color: rgba(0, 255, 136, 0.4);
+    box-shadow: 0 8px 40px rgba(0, 255, 136, 0.1);
+}
+
+.option-verify:hover {
+    border-color: rgba(0, 212, 255, 0.4);
+    box-shadow: 0 8px 40px rgba(0, 212, 255, 0.1);
+}
+
+.option-icon-wrap {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.option-icon-green {
+    background: rgba(0, 255, 136, 0.1);
+    color: var(--accent-cta);
+}
+
+.option-icon-cyan {
+    background: rgba(0, 212, 255, 0.1);
+    color: var(--primary-light);
+}
+
+.cert-option-card h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.cert-option-card p {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.option-btn {
+    margin-top: 8px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .certs-page {
+        padding: 100px 0 60px;
+    }
+
+    .certs-options {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .cert-option-card {
+        padding: 32px 20px;
+    }
+}

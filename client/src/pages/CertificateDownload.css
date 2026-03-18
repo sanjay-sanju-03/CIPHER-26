@@ -1,0 +1,215 @@
+.dl-page {
+    padding: 120px 0 80px;
+}
+
+.dl-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    transition: color 0.2s ease;
+}
+
+.dl-back:hover {
+    color: var(--primary-light);
+}
+
+.dl-intro {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    max-width: 500px;
+    margin: 12px auto 40px;
+    line-height: 1.7;
+}
+
+/* Search Card */
+.dl-search-card {
+    max-width: 640px;
+    margin: 0 auto 40px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+}
+
+.dl-search-form {
+    display: flex;
+    gap: 12px;
+}
+
+.dl-input-wrap {
+    flex: 1;
+    position: relative;
+}
+
+.dl-input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+.dl-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px 14px 44px;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.dl-input:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    background: rgba(0, 212, 255, 0.04);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.08);
+}
+
+.dl-input::placeholder {
+    color: var(--text-muted);
+}
+
+.dl-search-btn {
+    white-space: nowrap;
+}
+
+/* Results */
+.dl-results {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.dl-results-count {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    margin-bottom: 16px;
+}
+
+.dl-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.dl-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.4s ease forwards;
+}
+
+.dl-card:hover {
+    border-color: rgba(0, 255, 136, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 255, 136, 0.06);
+}
+
+.dl-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.dl-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.dl-field {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.dl-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.dl-value {
+    font-size: 0.92rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.dl-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 16px;
+}
+
+.dl-pending {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-style: italic;
+    padding: 8px;
+}
+
+.dl-not-found {
+    max-width: 640px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 24px;
+    border-radius: 12px;
+    background: rgba(255, 51, 102, 0.06);
+    border: 1px solid rgba(255, 51, 102, 0.2);
+    color: var(--danger);
+    animation: fadeInUp 0.4s ease;
+}
+
+.dl-not-found p {
+    font-size: 0.9rem;
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dl-page {
+        padding: 100px 0 60px;
+    }
+
+    .dl-search-card {
+        padding: 20px;
+    }
+
+    .dl-search-form {
+        flex-direction: column;
+    }
+
+    .dl-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dl-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}

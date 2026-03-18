@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowRight, FiCode, FiCpu, FiZap, FiUsers, FiAward } from 'react-icons/fi';
+import logo from '../assets/cipher-logo.png';
 import Countdown from '../components/Countdown';
 import './Home.css';
 
@@ -58,7 +59,7 @@ export default function Home() {
             particles.forEach(p => {
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(0, 255, 136, ${p.alpha})`;
+                ctx.fillStyle = `rgba(0, 212, 255, ${p.alpha})`;
                 ctx.fill();
                 p.x += p.dx;
                 p.y += p.dy;
@@ -88,8 +89,8 @@ export default function Home() {
             {/* Hero */}
             <section className="hero" ref={heroRef}>
                 <div className="hero-content container">
-                    <div className="hero-badge">
-                        <span className="badge badge-green">🔐 LBS College of Engineering, Kasaragod</span>
+                    <div className="hero-logo-wrap">
+                        <img src={logo} alt="CIPHER'26 Logo" className="hero-logo" />
                     </div>
 
                     <div className="hero-title-wrap">
@@ -115,8 +116,7 @@ export default function Home() {
                 </div>
 
                 <div className="hero-scroll-indicator">
-                    <div className="scroll-line" />
-                    <span>Scroll</span>
+                    <div className="scroll-arrow" />
                 </div>
             </section>
 
