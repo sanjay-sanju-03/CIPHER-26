@@ -47,9 +47,9 @@
     border-radius: 10px;
     padding: 16px 16px 16px 48px;
     color: var(--text-primary);
-    font-family: 'Orbitron', monospace;
+    font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
-    letter-spacing: 2px;
+    letter-spacing: 0.5px;
     transition: all 0.3s ease;
 }
 
@@ -370,12 +370,14 @@
 /* ── Responsive ── */
 @media (max-width: 768px) {
     .verify-page {
-        padding: 100px 0 60px;
+        padding: 90px 0 60px;
     }
 
     .verify-intro {
-        margin-top: -28px;
-        font-size: 0.88rem;
+        margin: 8px auto 24px;
+        font-size: 0.82rem;
+        max-width: 300px;
+        line-height: 1.5;
     }
 
     .verify-search-card {
@@ -383,8 +385,8 @@
     }
 
     .verify-input {
-        padding: 14px 14px 14px 44px;
-        font-size: 0.8rem;
+        padding: 14px 14px 14px 46px;
+        font-size: 0.85rem;
     }
 
     .verify-actions {

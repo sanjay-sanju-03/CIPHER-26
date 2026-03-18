@@ -193,7 +193,14 @@
 /* Responsive */
 @media (max-width: 768px) {
     .dl-page {
-        padding: 100px 0 60px;
+        padding: 90px 0 60px;
+    }
+
+    .dl-intro {
+        font-size: 0.82rem;
+        margin: 8px auto 28px;
+        max-width: 300px;
+        line-height: 1.5;
     }
 
     .dl-search-card {

@@ -183,7 +183,7 @@ export default function CertificateVerify() {
                             <input
                                 type="text"
                                 className="verify-input"
-                                placeholder="Enter Name or Certificate ID (e.g. CT26001)"
+                                placeholder="Name or Certificate ID"
                                 value={certId}
                                 onChange={e => setCertId(e.target.value)}
                                 autoFocus

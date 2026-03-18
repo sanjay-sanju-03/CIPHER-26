@@ -566,7 +566,7 @@ tbody tr:last-child td {
     margin-bottom: 28px;
   }
 
-  input, textarea, select {
+  input:not(.verify-input):not(.dl-input), textarea, select {
     min-height: 42px;
     padding: 10px 12px !important;
     font-size: 16px;
@@ -595,7 +595,7 @@ tbody tr:last-child td {
     padding: 4px 10px;
   }
 
-  input, textarea, select {
+  input:not(.verify-input):not(.dl-input), textarea, select {
     min-height: 40px;
     padding: 10px 12px !important;
     font-size: 16px;

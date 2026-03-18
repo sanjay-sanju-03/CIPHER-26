@@ -91,7 +91,13 @@
 /* ── Responsive ── */
 @media (max-width: 768px) {
     .certs-page {
-        padding: 100px 0 60px;
+        padding: 90px 0 60px;
+    }
+
+    .certs-intro {
+        font-size: 0.85rem;
+        margin: 8px auto 32px;
+        max-width: 300px;
     }
 
     .certs-options {
@@ -100,6 +106,14 @@
     }
 
     .cert-option-card {
-        padding: 32px 20px;
+        padding: 28px 20px;
+    }
+
+    .cert-option-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .cert-option-card p {
+        font-size: 0.82rem;
     }
 }

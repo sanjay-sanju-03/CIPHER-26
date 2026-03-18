@@ -50,7 +50,7 @@ export default function CertificateDownload() {
                             <input
                                 type="text"
                                 className="dl-input"
-                                placeholder="Enter your Name or Certificate ID (e.g. CT26001)"
+                                placeholder="Name or Certificate ID"
                                 value={query}
                                 onChange={e => setQuery(e.target.value)}
                                 autoFocus
