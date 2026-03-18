@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { FiSearch, FiCamera, FiAward, FiUser, FiCalendar, FiBookOpen, FiX, FiCheckCircle, FiAlertCircle } from 'react-icons/fi';
+import { Html5Qrcode } from 'html5-qrcode';
 import API from '../utils/api';
 import './CertificateVerify.css';
 
@@ -12,8 +13,7 @@ export default function CertificateVerify() {
     const [scanning, setScanning] = useState(false);
     const [error, setError] = useState('');
     const [dataReady, setDataReady] = useState(false);
-    const videoRef = useRef(null);
-    const streamRef = useRef(null);
+    const scannerRef = useRef(null);
 
     // Auto-verify if ?id= is in the URL
     useEffect(() => {
@@ -63,77 +63,51 @@ export default function CertificateVerify() {
         };
     }
 
-    // QR Scanner using camera
+    // QR Scanner using html5-qrcode (works on ALL browsers)
     async function startScan() {
         setScanning(true);
         setResult(null);
         setError('');
+
         try {
-            const stream = await navigator.mediaDevices.getUserMedia({
-                video: { facingMode: 'environment' }
-            });
-            streamRef.current = stream;
-            if (videoRef.current) {
-                videoRef.current.srcObject = stream;
-                videoRef.current.play();
-                scanFrame();
-            }
+            const html5Qr = new Html5Qrcode('qr-reader');
+            scannerRef.current = html5Qr;
+
+            await html5Qr.start(
+                { facingMode: 'environment' },
+                { fps: 10, qrbox: { width: 250, height: 250 } },
+                (decodedText) => {
+                    // QR code found
+                    handleQRResult(decodedText);
+                },
+                () => {} // ignore errors during scanning
+            );
         } catch (err) {
+            console.error('Camera error:', err);
             setError('Camera access denied. Please enter the Certificate ID manually.');
             setScanning(false);
         }
     }
 
-    function stopScan() {
+    async function stopScan() {
         setScanning(false);
-        if (streamRef.current) {
-            streamRef.current.getTracks().forEach(t => t.stop());
-            streamRef.current = null;
-        }
-    }
-
-    function scanFrame() {
-        if (!videoRef.current || !scanning) return;
-        const video = videoRef.current;
-        if (video.readyState !== video.HAVE_ENOUGH_DATA) {
-            requestAnimationFrame(scanFrame);
-            return;
-        }
-
-        const canvas = document.createElement('canvas');
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
-        const ctx = canvas.getContext('2d');
-        ctx.drawImage(video, 0, 0);
-
-        // Use BarcodeDetector if available
-        if ('BarcodeDetector' in window) {
-            const detector = new BarcodeDetector({ formats: ['qr_code'] });
-            detector.detect(canvas).then(barcodes => {
-                if (barcodes.length > 0) {
-                    const url = barcodes[0].rawValue;
-                    handleQRResult(url);
-                } else {
-                    requestAnimationFrame(scanFrame);
-                }
-            }).catch(() => requestAnimationFrame(scanFrame));
-        } else {
-            // Fallback — no native QR support
-            setError('QR scanning not supported on this browser. Please enter the ID manually.');
-            stopScan();
+        if (scannerRef.current) {
+            try {
+                await scannerRef.current.stop();
+                scannerRef.current.clear();
+            } catch (e) { /* ignore */ }
+            scannerRef.current = null;
         }
     }
 
     function handleQRResult(url) {
         stopScan();
-        // Extract ID from URL like https://yoursite.com/verify?id=CERT001
         try {
             const u = new URL(url);
             const id = u.searchParams.get('id') || url;
             setCertId(id);
             verifyCert(id);
         } catch {
-            // Not a URL, treat as raw ID
             setCertId(url);
             verifyCert(url);
         }
@@ -232,10 +206,7 @@ export default function CertificateVerify() {
                     {/* QR Scanner */}
                     {scanning && (
                         <div className="qr-scanner-wrap">
-                            <video ref={videoRef} className="qr-video" playsInline muted />
-                            <div className="qr-overlay">
-                                <div className="qr-frame" />
-                            </div>
+                            <div id="qr-reader" className="qr-reader" />
                             <p className="qr-hint">Point your camera at the QR code</p>
                         </div>
                     )}
