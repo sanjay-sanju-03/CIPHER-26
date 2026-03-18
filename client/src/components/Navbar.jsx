@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FiMenu, FiX, FiHome, FiCalendar, FiGrid, FiAward } from 'react-icons/fi';
+import { FiHome, FiCalendar, FiGrid, FiAward } from 'react-icons/fi';
 import logo from '../assets/cipher-logo.png';
 import './Navbar.css';
 
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
 
@@ -14,12 +13,6 @@ export default function Navbar() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
-    // Lock body scroll when menu is open
-    useEffect(() => {
-        document.body.style.overflow = isOpen ? 'hidden' : '';
-        return () => { document.body.style.overflow = ''; };
-    }, [isOpen]);
 
     const navLinks = [
         { to: '/', label: 'Home', icon: <FiHome size={20} /> },
@@ -57,32 +50,6 @@ export default function Navbar() {
                     ))}
                 </div>
 
-                <button className="hamburger" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-                    {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-                </button>
-            </div>
-
-            {/* Mobile fullscreen menu */}
-            <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
-                <div className="mobile-menu-content">
-                    {navLinks.map((link, i) => (
-                        <Link
-                            key={link.to}
-                            to={link.to}
-                            className={`mobile-link ${isActive(link.to) ? 'active' : ''}`}
-                            style={{ animationDelay: isOpen ? `${i * 0.08}s` : '0s' }}
-                            onClick={() => setIsOpen(false)}
-                        >
-                            <span className="mobile-link-icon">{link.icon}</span>
-                            <span className="mobile-link-label">{link.label}</span>
-                            {isActive(link.to) && <span className="mobile-active-dot" />}
-                        </Link>
-                    ))}
-                </div>
-                <div className="mobile-menu-footer">
-                    <img src={logo} alt="" className="mobile-footer-logo" />
-                    <p>CIPHER'26 — Technical Symposium</p>
-                </div>
             </div>
         </nav>
     );

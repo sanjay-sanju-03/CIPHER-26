@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PageLoader from './components/PageLoader';
 import Navbar from './components/Navbar';
+import BottomNav from './components/BottomNav';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Events from './pages/Events';
@@ -30,6 +31,7 @@ function App() {
         <Route path="/*" element={
           <>
             <Navbar />
+            <BottomNav />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/events" element={<Events />} />

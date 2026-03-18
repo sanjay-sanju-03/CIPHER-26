@@ -1,0 +1,185 @@
+/* ── Bottom Navigation ── */
+.bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 998;
+    background: rgba(6, 6, 20, 0.98);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(74, 127, 165, 0.2);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.bottom-nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: stretch;
+    height: 64px;
+}
+
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text-secondary);
+    gap: 4px;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+.bottom-nav-item:active {
+    background: rgba(0, 212, 255, 0.06);
+}
+
+.bottom-nav-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.bottom-nav-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* ── Active State ── */
+.bottom-nav-item.active {
+    color: var(--primary-light);
+}
+
+.bottom-nav-item.active .bottom-nav-icon {
+    color: var(--primary-light);
+    filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.4));
+}
+
+.bottom-nav-indicator {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 3px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 212, 255, 0.6);
+    animation: indicatorPulse 2s ease-in-out infinite;
+}
+
+@keyframes indicatorPulse {
+    0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; }
+    50% { transform: translateX(-50%) scale(1.2); opacity: 0.8; }
+}
+
+/* ── Responsive: Show Bottom Nav ── */
+@media (max-width: 768px) {
+    .bottom-nav {
+        display: block;
+    }
+
+    .bottom-nav-container {
+        height: 70px;
+        padding: 8px 0 0;
+    }
+
+    .bottom-nav-item {
+        gap: 6px;
+    }
+
+    .bottom-nav-icon {
+        font-size: 1.2rem;
+    }
+
+    .bottom-nav-label {
+        font-size: 0.65rem;
+    }
+
+    .bottom-nav-item.active .bottom-nav-icon {
+        filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.5));
+    }
+}
+
+@media (max-width: 640px) {
+    .bottom-nav-container {
+        height: 66px;
+        padding: 6px 0 0;
+    }
+
+    .bottom-nav-item {
+        gap: 5px;
+    }
+
+    .bottom-nav-icon {
+        font-size: 1.1rem;
+    }
+
+    .bottom-nav-label {
+        font-size: 0.62rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .bottom-nav {
+        background: rgba(6, 6, 20, 0.99);
+    }
+
+    .bottom-nav-container {
+        height: 64px;
+        padding: 4px 0 0;
+    }
+
+    .bottom-nav-item {
+        gap: 4px;
+    }
+
+    .bottom-nav-icon {
+        font-size: 1rem;
+    }
+
+    .bottom-nav-label {
+        font-size: 0.6rem;
+        letter-spacing: 0.3px;
+    }
+
+    .bottom-nav-item.active .bottom-nav-icon {
+        filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.45));
+    }
+}
+
+@media (max-width: 380px) {
+    .bottom-nav-container {
+        height: 62px;
+    }
+
+    .bottom-nav-item {
+        gap: 3px;
+    }
+
+    .bottom-nav-icon {
+        font-size: 0.95rem;
+    }
+
+    .bottom-nav-label {
+        font-size: 0.58rem;
+        letter-spacing: 0.2px;
+    }
+
+    .bottom-nav-item:active {
+        background: rgba(0, 212, 255, 0.08);
+    }
+}

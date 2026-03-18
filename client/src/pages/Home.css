@@ -2,6 +2,12 @@
   position: relative;
 }
 
+@media (max-width: 768px) {
+  .home {
+    padding-bottom: 70px;
+  }
+}
+
 .particles-canvas {
   position: fixed;
   top: 0;

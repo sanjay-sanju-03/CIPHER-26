@@ -2,6 +2,30 @@
     padding: 120px 0 80px;
 }
 
+@media (max-width: 768px) {
+  .schedule-page {
+    padding-bottom: 150px;
+  }
+}
+
+@media (max-width: 640px) {
+  .schedule-page {
+    padding-bottom: 146px;
+  }
+}
+
+@media (max-width: 480px) {
+  .schedule-page {
+    padding-bottom: 144px;
+  }
+}
+
+@media (max-width: 380px) {
+  .schedule-page {
+    padding-bottom: 142px;
+  }
+}
+
 /* ── Timeline ── */
 .timeline {
     max-width: 800px;

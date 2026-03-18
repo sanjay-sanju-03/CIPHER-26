@@ -2,6 +2,30 @@
     padding: 120px 0 80px;
 }
 
+@media (max-width: 768px) {
+  .certs-page {
+    padding-bottom: 150px;
+  }
+}
+
+@media (max-width: 640px) {
+  .certs-page {
+    padding-bottom: 146px;
+  }
+}
+
+@media (max-width: 480px) {
+  .certs-page {
+    padding-bottom: 144px;
+  }
+}
+
+@media (max-width: 380px) {
+  .certs-page {
+    padding-bottom: 142px;
+  }
+}
+
 .certs-intro {
     text-align: center;
     color: var(--text-secondary);
@@ -115,5 +139,133 @@
 
     .cert-option-card p {
         font-size: 0.82rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .certs-page {
+        padding: 80px 0 50px;
+    }
+
+    .certs-intro {
+        font-size: 0.8rem;
+        margin: 6px auto 24px;
+        max-width: 280px;
+        line-height: 1.5;
+    }
+
+    .certs-options {
+        gap: 12px;
+    }
+
+    .cert-option-card {
+        padding: 24px 16px;
+        border-radius: 12px;
+    }
+
+    .cert-option-card h3 {
+        font-size: 0.88rem;
+        margin-bottom: 8px;
+    }
+
+    .cert-option-card p {
+        font-size: 0.78rem;
+        line-height: 1.4;
+    }
+
+    .option-icon {
+        width: 32px;
+        height: 32px;
+        margin-bottom: 8px;
+    }
+
+    .option-btn {
+        font-size: 0.75rem;
+        min-height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .certs-page {
+        padding: 70px 0 40px;
+    }
+
+    .section-title {
+        font-size: clamp(1.4rem, 5vw, 1.8rem);
+        margin-bottom: 8px;
+    }
+
+    .certs-intro {
+        font-size: 0.72rem;
+        margin: 4px auto 18px;
+        max-width: 240px;
+        line-height: 1.4;
+    }
+
+    .certs-options {
+        gap: 10px;
+    }
+
+    .cert-option-card {
+        padding: 18px 14px;
+        border-radius: 10px;
+    }
+
+    .cert-option-card h3 {
+        font-size: 0.85rem;
+        margin-bottom: 6px;
+    }
+
+    .cert-option-card p {
+        font-size: 0.72rem;
+    }
+
+    .option-icon {
+        width: 28px;
+        height: 28px;
+        margin-bottom: 6px;
+    }
+
+    .option-btn {
+        font-size: 0.7rem;
+        min-height: 38px;
+        margin-top: 6px;
+    }
+}
+
+@media (max-width: 380px) {
+    .certs-page {
+        padding: 64px 0 36px;
+    }
+
+    .section-title {
+        font-size: clamp(1.2rem, 4vw, 1.6rem);
+    }
+
+    .certs-intro {
+        font-size: 0.68rem;
+        max-width: 220px;
+    }
+
+    .cert-option-card {
+        padding: 16px 12px;
+    }
+
+    .cert-option-card h3 {
+        font-size: 0.8rem;
+    }
+
+    .cert-option-card p {
+        font-size: 0.68rem;
+    }
+
+    .option-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .option-btn {
+        font-size: 0.65rem;
+        min-height: 36px;
     }
 }

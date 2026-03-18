@@ -2,6 +2,30 @@
     padding: 120px 0 80px;
 }
 
+@media (max-width: 768px) {
+  .sponsors-page {
+    padding-bottom: 150px;
+  }
+}
+
+@media (max-width: 640px) {
+  .sponsors-page {
+    padding-bottom: 146px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsors-page {
+    padding-bottom: 144px;
+  }
+}
+
+@media (max-width: 380px) {
+  .sponsors-page {
+    padding-bottom: 142px;
+  }
+}
+
 .sponsors-intro {
     text-align: center;
     color: var(--text-secondary);

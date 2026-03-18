@@ -2,6 +2,30 @@
     padding: 120px 0 80px;
 }
 
+@media (max-width: 768px) {
+  .dl-page {
+    padding-bottom: 150px;
+  }
+}
+
+@media (max-width: 640px) {
+  .dl-page {
+    padding-bottom: 146px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dl-page {
+    padding-bottom: 144px;
+  }
+}
+
+@media (max-width: 380px) {
+  .dl-page {
+    padding-bottom: 142px;
+  }
+}
+
 .dl-back {
     display: inline-flex;
     align-items: center;
@@ -68,6 +92,9 @@
     font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
     transition: all 0.3s ease;
+    min-height: 48px;
+    line-height: 1.5;
+    vertical-align: middle;
 }
 
 .dl-input:focus {
@@ -79,6 +106,10 @@
 
 .dl-input::placeholder {
     color: var(--text-muted);
+    opacity: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .dl-search-btn {
@@ -218,5 +249,244 @@
     .dl-row {
         grid-template-columns: 1fr;
         gap: 10px;
+    }
+}
+
+@media (max-width: 640px) {
+    .dl-page {
+        padding: 80px 0 50px;
+    }
+
+    .dl-back {
+        font-size: 0.8rem;
+        margin-bottom: 16px;
+    }
+
+    .dl-intro {
+        font-size: 0.78rem;
+        margin: 6px auto 20px;
+        max-width: 280px;
+    }
+
+    .dl-search-card {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .dl-search-form {
+        gap: 10px;
+    }
+
+    .dl-input {
+        padding: 14px 12px 14px 44px;
+        font-size: 0.82rem;
+        border-radius: 8px;
+        min-height: 46px;
+        line-height: 1.4;
+    }
+
+    .dl-input::placeholder {
+        font-size: 0.78rem;
+        opacity: 0.8;
+    }
+
+    .dl-input-icon {
+        left: 12px;
+        width: 14px;
+    }
+
+    .dl-search-btn {
+        min-height: 40px;
+        font-size: 0.75rem;
+    }
+
+    .dl-grid {
+        gap: 14px;
+    }
+
+    .dl-card {
+        border-radius: 10px;
+    }
+
+    .dl-label {
+        font-size: 0.65rem;
+    }
+
+    .dl-value {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dl-page {
+        padding: 70px 0 40px;
+    }
+
+    .section-subtitle {
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+    }
+
+    .section-title {
+        font-size: clamp(1.4rem, 5vw, 1.8rem);
+        margin-bottom: 8px;
+    }
+
+    .dl-back {
+        font-size: 0.74rem;
+        margin-bottom: 12px;
+    }
+
+    .dl-intro {
+        font-size: 0.72rem;
+        margin: 4px auto 16px;
+        max-width: 240px;
+        line-height: 1.4;
+    }
+
+    .dl-search-card {
+        padding: 14px;
+        border-radius: 10px;
+    }
+
+    .dl-search-form {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .dl-input-wrap {
+        order: 1;
+    }
+
+    .dl-input {
+        padding: 14px 12px 14px 40px;
+        font-size: 0.8rem;
+        border-radius: 6px;
+        min-height: 52px;
+        line-height: 1.5;
+    }
+
+    .dl-input::placeholder {
+        font-size: 0.76rem;
+        color: rgba(138, 154, 176, 0.8);
+    }
+
+    .dl-input-icon {
+        left: 10px;
+        width: 13px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .dl-search-btn {
+        order: 2;
+        min-height: 38px;
+        font-size: 0.7rem;
+        white-space: nowrap;
+        width: 100%;
+        padding: 8px 10px;
+    }
+
+    .dl-results-count {
+        font-size: 0.8rem;
+        margin-bottom: 12px;
+    }
+
+    .dl-grid {
+        gap: 12px;
+    }
+
+    .dl-card {
+        border-radius: 8px;
+    }
+
+    .dl-card-info {
+        padding: 14px;
+    }
+
+    .dl-row {
+        gap: 10px;
+    }
+
+    .dl-field {
+        gap: 4px;
+    }
+
+    .dl-label {
+        font-size: 0.65rem;
+        gap: 4px;
+    }
+
+    .dl-value {
+        font-size: 0.8rem;
+    }
+
+    .type-badge {
+        font-size: 0.65rem;
+    }
+
+    .dl-actions {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .dl-action-btn {
+        font-size: 0.7rem;
+        padding: 8px 10px;
+        min-height: 36px;
+    }
+}
+
+@media (max-width: 380px) {
+    .dl-page {
+        padding: 64px 0 36px;
+    }
+
+    .section-title {
+        font-size: clamp(1.2rem, 4vw, 1.6rem);
+    }
+
+    .dl-intro {
+        font-size: 0.68rem;
+        max-width: 220px;
+    }
+
+    .dl-search-card {
+        padding: 12px;
+    }
+
+    .dl-input {
+        padding: 14px 10px 14px 38px;
+        font-size: 0.78rem;
+        min-height: 50px;
+        line-height: 1.5;
+    }
+
+    .dl-input::placeholder {
+        font-size: 0.74rem;
+        opacity: 0.9;
+    }
+
+    .dl-input-icon {
+        left: 8px;
+        width: 12px;
+    }
+
+    .dl-search-btn {
+        min-height: 36px;
+        font-size: 0.65rem;
+    }
+
+    .dl-card-info {
+        padding: 12px;
+    }
+
+    .dl-value {
+        font-size: 0.75rem;
+    }
+
+    .dl-action-btn {
+        font-size: 0.65rem;
+        padding: 6px 8px;
     }
 }

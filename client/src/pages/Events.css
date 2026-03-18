@@ -2,6 +2,30 @@
     padding: 120px 0 80px;
 }
 
+@media (max-width: 768px) {
+  .events-page {
+    padding-bottom: 150px;
+  }
+}
+
+@media (max-width: 640px) {
+  .events-page {
+    padding-bottom: 146px;
+  }
+}
+
+@media (max-width: 480px) {
+  .events-page {
+    padding-bottom: 144px;
+  }
+}
+
+@media (max-width: 380px) {
+  .events-page {
+    padding-bottom: 142px;
+  }
+}
+
 .events-header {
     text-align: center;
     margin-bottom: 48px;

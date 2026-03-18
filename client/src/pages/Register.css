@@ -2,6 +2,30 @@
     padding: 120px 0 80px;
 }
 
+@media (max-width: 768px) {
+  .register-page {
+    padding-bottom: 150px;
+  }
+}
+
+@media (max-width: 640px) {
+  .register-page {
+    padding-bottom: 146px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-page {
+    padding-bottom: 144px;
+  }
+}
+
+@media (max-width: 380px) {
+  .register-page {
+    padding-bottom: 142px;
+  }
+}
+
 .back-btn {
     margin-bottom: 32px;
 }
