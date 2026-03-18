@@ -37,6 +37,7 @@ function App() {
               <Route path="/schedule" element={<Schedule />} />
               <Route path="/sponsors" element={<Sponsors />} />
               <Route path="/certificates/verify" element={<CertificateVerify />} />
+              <Route path="/verify" element={<CertificateVerify />} />
               <Route path="/certificates" element={<Certificates />} />
               <Route path="/certificates/download" element={<CertificateDownload />} />
             </Routes>
