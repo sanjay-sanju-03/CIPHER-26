@@ -6,9 +6,9 @@ import Countdown from '../components/Countdown';
 import './Home.css';
 
 const stats = [
-    { icon: <FiUsers />, value: '1000+', label: 'Participants' },
-    { icon: <FiCode />, value: '25+', label: 'Events' },
-    { icon: <FiAward />, value: '₹2L+', label: 'Prize Pool' },
+    { icon: <FiUsers />, value: '300+', label: 'Participants' },
+    { icon: <FiCode />, value: '10+', label: 'Events' },
+    { icon: <FiAward />, value: '₹20K+', label: 'Prize Pool' },
     { icon: <FiCpu />, value: '1', label: 'Day' },
 ];
 
@@ -169,8 +169,6 @@ export default function Home() {
                             <p>
                                 <strong>CIPHER</strong> is the annual flagship <strong>Techno-Cultural Fest</strong> —
                                 a dynamic platform for technology, competitions, workshops, and innovation.
-                                One of <span className="highlight">South India's premier National-Level
-                                    Techno-Cultural Festivals</span> 🚀
                             </p>
                         </div>
                     </div>
