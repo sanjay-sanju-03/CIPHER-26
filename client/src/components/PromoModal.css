@@ -1,0 +1,323 @@
+/* ── Cinematic Promo Modal ── */
+
+.promo-overlay2 {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.promo-cinematic {
+    width: 100%;
+    max-width: 420px;
+    height: 640px; /* Tall for mobile posters */
+    max-height: 90vh; /* Don't overflow small screens */
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-card);
+    box-shadow: 0 0 60px rgba(0, 212, 255, 0.2);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Base without posters */
+.promo-cinematic:not(.has-poster) {
+    height: auto;
+    padding-bottom: 32px;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.promo-close2 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.promo-close2:hover {
+    background: rgba(255, 51, 102, 0.8);
+    transform: rotate(90deg);
+}
+
+/* Background poster image but blurred */
+.cinematic-bg {
+    position: absolute;
+    inset: -30px; /* bleed edges so blur doesn't look cut off */
+    background-size: cover;
+    background-position: center;
+    filter: blur(25px) saturate(1.8) brightness(1.2);
+    z-index: 1;
+    opacity: 0.5;
+    transition: background-image 0.6s ease;
+}
+
+.cinematic-overlay-dark {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(6,6,20,0.4) 0%, rgba(6,6,20,0.9) 75%, #060614 100%);
+    z-index: 2;
+}
+
+/* Main Content Layer */
+.cinematic-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 32px 24px;
+}
+
+.cinematic-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.cyber-badge {
+    display: inline-block;
+    background: rgba(0, 212, 255, 0.15);
+    color: var(--primary-light);
+    padding: 6px 16px;
+    border-radius: 4px;
+    border: 1px solid var(--primary-light);
+    font-family: 'Orbitron', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+/* The actual auto-playing 3D looking poster */
+.cinematic-slider {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    min-height: 0;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+    transition: all 0.2s;
+}
+
+.slider-btn.prev { left: -10px; }
+.slider-btn.next { right: -10px; }
+
+.slider-btn:hover {
+    background: var(--primary-light);
+    color: #000;
+}
+
+.cinematic-poster-wrap {
+    height: 100%;
+    aspect-ratio: 1 / 1.4;
+    position: relative;
+    z-index: 10;
+    perspective: 1000px;
+}
+
+.cinematic-poster {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    position: relative;
+    z-index: 2;
+    background: #000;
+    animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.85) translateY(20px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.poster-glow {
+    position: absolute;
+    inset: -15px;
+    background-size: cover;
+    background-position: center;
+    filter: blur(30px);
+    z-index: 1;
+    opacity: 0.8;
+    transition: background-image 0.6s ease;
+}
+
+/* Footer Section */
+.cinematic-footer {
+    text-align: center;
+    margin-top: 24px;
+    flex-shrink: 0;
+}
+
+.cinematic-footer h3 {
+    margin: 0 0 16px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cinematic-btn {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.15rem;
+    font-family: 'Orbitron', monospace;
+    background: var(--accent-cta);
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.4);
+    transition: all 0.3s;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.cinematic-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 40px rgba(0, 255, 136, 0.6);
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dot.active {
+    background: var(--primary-light);
+    width: 32px;
+    border-radius: 4px;
+    box-shadow: 0 0 12px var(--primary-light);
+}
+
+/* Fallback styles if no posters */
+.promo-fallback {
+    text-align: center;
+    width: 100%;
+}
+
+.promo-banner {
+    height: 120px;
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 212, 255, 0.2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+}
+
+.promo-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300ff88' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+}
+
+.promo-icon {
+    color: var(--accent-cta);
+    filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.5));
+    animation: fallbackPulse 2s infinite ease-in-out;
+}
+
+@keyframes fallbackPulse {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.5)); }
+    50% { transform: scale(1.1); filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.8)); }
+}
+
+.promo-content {
+    padding: 32px 24px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .promo-cinematic {
+        height: 580px;
+    }
+    
+    .cinematic-content {
+        padding: 24px 16px;
+    }
+    
+    .cinematic-footer h3 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+    
+    .cinematic-btn {
+        padding: 14px;
+        font-size: 1.05rem;
+    }
+    
+    .cyber-badge {
+        font-size: 0.65rem;
+    }
+}

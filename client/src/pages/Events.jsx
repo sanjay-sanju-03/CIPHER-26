@@ -72,30 +72,28 @@ export default function Events() {
                     </div>
                 ) : (
                     <>
+                        {/* On-Day Events */}
+                        {mainEvents.length > 0 && (
+                            <div className="events-section">
+                                <div className="events-section-header">
+                                    <span className="badge badge-green" style={{ fontSize: '0.75rem', padding: '6px 16px' }}>🔥 On-Day Events</span>
+                                    <p className="events-section-sub">The heart of CIPHER'26</p>
+                                </div>
+                                <div className="events-list">
+                                    {mainEvents.map(event => <EventCard key={event._id} event={event} />)}
+                                </div>
+                            </div>
+                        )}
+
                         {/* Pre-Events */}
                         {preEvents.length > 0 && (
-                            <div className="events-section">
+                            <div className="events-section" style={{ marginTop: mainEvents.length > 0 ? '40px' : '0' }}>
                                 <div className="events-section-header">
                                     <span className="badge badge-red" style={{ fontSize: '0.75rem', padding: '6px 16px' }}>⚡ Pre-Events</span>
                                     <p className="events-section-sub">Happening before the main fest — don't miss out!</p>
                                 </div>
                                 <div className="events-list">
                                     {preEvents.map(event => <EventCard key={event._id} event={event} />)}
-                                </div>
-                            </div>
-                        )}
-
-                        {/* On-Day Events */}
-                        {mainEvents.length > 0 && (
-                            <div className="events-section">
-                                {preEvents.length > 0 && (
-                                    <div className="events-section-header">
-                                        <span className="badge badge-green" style={{ fontSize: '0.75rem', padding: '6px 16px' }}>🔥 On-Day Events</span>
-                                        <p className="events-section-sub">The heart of CIPHER'26</p>
-                                    </div>
-                                )}
-                                <div className="events-list">
-                                    {mainEvents.map(event => <EventCard key={event._id} event={event} />)}
                                 </div>
                             </div>
                         )}

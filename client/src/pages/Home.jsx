@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FiArrowRight, FiCode, FiCpu, FiZap, FiUsers, FiAward } from 'react-icons/fi';
 import logo from '../assets/cipher-logo.png';
 import Countdown from '../components/Countdown';
+import PromoModal from '../components/PromoModal';
 import './Home.css';
 
 const stats = [
@@ -83,6 +84,7 @@ export default function Home() {
 
     return (
         <div className="home">
+            <PromoModal />
             {/* Particles */}
             <canvas id="particles-canvas" className="particles-canvas" />
 
